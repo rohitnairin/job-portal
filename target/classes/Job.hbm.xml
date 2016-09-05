@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.rohit.model">
+	<class name="Job" table="job">
+		<id name="jobId" column="jobId">
+		</id>
+		<property name="title" column="title">
+		</property>
+		<property name="location" column="location"></property>
+		<property name="skills" column="skills"></property>
+		<property name="description" column="description"></property>
+		<property name="postingDate" column="postingDate"></property>
+		<property name="expiryDate" column="expiryDate"></property>
+		<property name="recruiterName" column="recruiterName"></property>
+		<property name="companyId" column="companyId"></property>
+		<set name="jobsApplied">
+			<key column="jobId"></key>
+			<one-to-many class="JobApplied" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.rohit.model">
+	<class name="JobSeeker" table="jobseeker">
+		<meta attribute="class-description">Mapping file for jobseeker class</meta>
+		<id name="email" column="email">
+		</id>
+		<property name="userName" column="userName"></property>
+		<property name="password" column="password"></property>
+		<property name="dob" column="dob"></property>
+		<property name="salary" column="salary"></property>
+		<property name="experience" column="experience"></property>
+		<one-to-one name="name" class="Name" cascade="all"></one-to-one>
+		<one-to-one name="address" class="Address" cascade="all"></one-to-one>
+		<set name="qualifications" cascade="all">
+			<key column="email"></key>
+			<one-to-many class="Qualification" />
+		</set>
+		<set name="skills" cascade="all">
+			<key column="email"></key>
+			<one-to-many class="Skill" />
+		</set>
+		<set name="workExperiences" cascade="all">
+			<key column="email"></key>
+			<one-to-many class="WorkExperience" />
+		</set>
+		<set name="languages" cascade="all">
+			<key column="email"></key>
+			<one-to-many class="Language" />
+		</set>
+		<set name="jobsApplied" cascade="all">
+			<key column="email"></key>
+			<many-to-many class="JobApplied"></many-to-many>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.rohit.model">
+	<class name="Skill" table="skill">
+		<id name="skillId" column="skillId">
+		</id>
+		<property name="name" column="name"></property>
+		<many-to-one name="email" column="email" class="JobSeeker"></many-to-one>
+
+	</class>
+
+
+</hibernate-mapping>

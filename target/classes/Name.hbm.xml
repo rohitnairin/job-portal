@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.rohit.model">
+
+	<class name="Name" table="jobseekername">
+		<meta attribute="class-description">Mapping for name model</meta>
+		<id name="email" column="email">
+			<generator class="foreign">
+				<param name="property">jobSeeker</param>
+			</generator>
+
+		</id>
+		<one-to-one name="jobSeeker" class="JobSeeker" constrained="true"></one-to-one>
+		<property name="firstName" column="firstName"></property>
+		<property name="middleName" column="middleName"></property>
+		<property name="lastName" column="lastName"></property>
+
+	</class>
+
+
+</hibernate-mapping>

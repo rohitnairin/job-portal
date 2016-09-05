@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.rohit.model">
+	<class name="Company" table="company">
+		<id name="companyId" column="companyId"></id>
+		<property name="companyName" column="companyName"></property>
+		<property name="location" column="location"></property>
+		<property name="description" column="description"></property>
+		<property name="password" column="PASSWORD"></property>
+		<set name="recruiters" cascade="all">
+			<key column="companyId"></key>
+			<one-to-many class="Recruiter" />
+		</set>
+
+	</class>
+
+
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.rohit.model">
+
+	<class name="Address" table="address">
+		<meta attribute="class-description">Mapping for Address model</meta>
+		<id name="email" column="email">
+			<generator class="foreign">
+				<param name="property">jobseeker</param>
+			</generator>
+
+		</id>
+		<one-to-one name="email" class="JobSeeker" constrained="true"></one-to-one>
+		<property name="street" column="street"></property>
+		<property name="city" column="city"></property>
+		<property name="district" column="district"></property>
+		<property name="state" column="state"></property>
+		<property name="pincode" column="pincode"></property>
+
+	</class>
+
+
+</hibernate-mapping>

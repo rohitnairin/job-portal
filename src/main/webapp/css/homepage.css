@@ -1,0 +1,19 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background-color: #00BFFF;
+}
+
+.homeheader {
+	background-color: red;
+	border: 1px solid black;
+	color: white;
+	margin-bottom: 5%
+}
+
+.login {
+	margin-left: 5%;
+	margin-right: 10%; border : 2px solid white;
+	color: black;
+	border: 2px solid white;
+}
